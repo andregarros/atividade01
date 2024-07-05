@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box
+}/*alterar propriedade padrão da box*/
+
+.slideshow-container { /*a classe pai da div*/
+    max-width: 1000px;/* a largura maxima que a classe ocupa*/
+    position: relative;/*serve pra alterar a posição do elemento*/
+    margin: auto;/*a margn auto vai deixar largura e altura do mesmo tamanho, e vai servir para deixar ao centro da tela*/
+}
+
+.mySlides {
+    display: none;
+}
+
+.anterior,
+.proximo {/*classe dos botões laterais*/
+    cursor: pointer;/*muda o tipo de curso*/
+    position: absolute;/*é posicionado com relação ao ponto incial do seu pai, que no caso é o .slideshow-container*/
+    top: 50%;/* define o topo em relação ao pai*/
+    width: auto;/*define a largura do elemento*/
+    margin-top: -22px;/* a margem da altura, pra dar um espaçamento*/
+    padding: 16px;/*esta dando um preenchimento na altura e na largura*/
+    color: white;/* a cor do botao*/
+    font-weight: bold;/*dar mais destaque a fonte*/
+    font-size: 18px;/*tamanho do botão*/
+    transition: 0.6s ease;/*transição,deixando mais suave o hover*/
+    border-radius: 0 3px 3px 0;/*estilização da borda*/
+   
+}
+
+.proximo {/*classe dos botões laterais*/
+    right: 0;/*deixando o botão a direita*/
+    border-radius: 3px 0 0 3px;/*estilização da borda*/
+}
+
+.anterior:hover,/*adiciona um fundo ao botao,quando o curso passa por cima*/
+.proximo:hover {
+    background-color: rgba(0, 0, 0, 0.8);/*cor do fundo do hover*/
+}
+
+.text { /*a classe do texto*/
+    color: #f2f2f2;/*cor da fonte*/
+    font-size: 15px;/*tamanho da fonte*/
+    padding: 8px 12px;/* prenchimento */
+    position: absolute;/*é posicionado com relação ao ponto incial do seu pai, que no caso é o .slideshow-container*/
+    bottom: 8px;/*distanciamento da parte de baixo*/
+    width: 100%;/*largura*/
+    text-align: center;/*centralização do texto*/
+}
+
+.numbertext {/*classe dos numeros para a quantidade de imagens*/
+    color: #f2f2f2;/*cor do numero*/
+    font-size: 12px;/*tamnaho da fonte*/
+    padding: 8px 12px;/*preenchimento*/
+    position: absolute;/*é posicionado com relação ao ponto incial do seu pai, que no caso é o .slideshow-container*/
+    top: 0;/*serve para ficar ao topo do elemnto pai*/
+}
+
+.ponto {/*classe ponto*/
+    cursor: pointer;/*muda o tipo de curso, para algo clicavel*/
+    height: 15px;/*define a altura do ponto*/
+    width: 15px;/*define a largura do ponto*/
+    margin: 0 2px;/*define a margem do ponto*/
+    background-color: #bbb;/*a cor do fundo*/
+    border-radius: 50%;/*estilizando as bordas, deixando no formato arredondado*/
+    display: inline-block;/*deixar os pontos em linha*/
+    transition: background-color 0.6s ease;/*transição do hover*/
+}
+
+.active,
+.ponto:hover {/*adiciona um fundo ao botao,quando o curso passa por cima*/
+    background-color: #717171;/*cor do fundo do hover*/
+}
+
+.fade {/*classe de animação*/
+    animation-name: fade;/*animação ao passar para a proxima imagem*/
+    animation-duration: 2.5s;/*animação ao passar para a proxima imagem*/
+}
+
+@keyframes fade {/*animação*/
+    from {
+        opacity: .2 /*opacidade da animação*/
+    }
+
+    to {
+        opacity: 1/*opacidade da animação*/
+    }
+}
